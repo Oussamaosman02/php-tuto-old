@@ -2,6 +2,29 @@
 
 > This php beginner friendly tutorial is from [this video](https://www.youtube.com/watch?v=BUCiSSyIGGU) and this is the [original repo](https://github.com/bradtraversy/php-crash)
 
+## Index
+
+- [Initialize php](#initialize-php)
+- [Output](#output)
+- [Variables](#variables)
+- [Constants](#constants)
+- [Arrays](#arrays)
+- [Operators](#operators)
+- [Conditionals](#conditionals)
+- [Loops](#loops)
+- [Functions](#functions)
+- [Array functions](#array-functions)
+- [String Functions](#string-functions)
+- [Superglobals](#superglobals)
+- [GET and POST](#get-and-post)
+- [Sanitize Inputs](#sanitize-inputs)
+- [Cookies](#cookies)
+- [Sessions](#sessions)
+- [File Handling](#file-handling)
+- [File Uploading](#file-uploading)
+- [Exceptions](#exceptions)
+- [OOP](#oop)
+
 ## Initialize php
 
 For using php, we need to create a .php file.
@@ -1190,7 +1213,7 @@ printf('1+1=%d',1+2);
 
 In this case, the `%d` replace the number passed in the next argument.
 
-## Handle html strings
+### Handle html strings
 
 If we `echo` any html tag, like `h1` or `hr`, it will be displayed as it was normal html as it isn't parsed.
 
