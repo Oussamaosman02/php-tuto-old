@@ -1,74 +1,74 @@
 # PHP
 
-> This php beginner friendly tutorial is from [this video](https://www.youtube.com/watch?v=BUCiSSyIGGU) and this is the [original repo](https://github.com/bradtraversy/php-crash)
+> Este tutorial para principiantes de php es de [este video](https://www.youtube.com/watch?v=BUCiSSyIGGU) y este es el [repositorio original](https://github.com/bradtraversy/php-crash)
 
 ## Index
 
-- [Initialize php](#initialize-php)
-- [Output](#output)
+- [Empezar php](#initialize-php)
+- [Salida](#output)
 - [Variables](#variables)
-- [Constants](#constants)
+- [Constantes](#constants)
 - [Arrays](#arrays)
-- [Operators](#operators)
-- [Conditionals](#conditionals)
-- [Loops](#loops)
-- [Functions](#functions)
-- [Array functions](#array-functions)
-- [String Functions](#string-functions)
-- [Superglobals](#superglobals)
-- [GET and POST](#get-and-post)
-- [Sanitize Inputs](#sanitize-inputs)
+- [Operatodores](#operators)
+- [Condicionales](#conditionals)
+- [Bucles](#loops)
+- [Funciones](#functions)
+- [Funciones de Array](#array-functions)
+- [Funciones de Cadena](#string-functions)
+- [Superglobales](#superglobals)
+- [GET y POST](#get-and-post)
+- [Securizar Inputs](#sanitize-inputs)
 - [Cookies](#cookies)
-- [Sessions](#sessions)
-- [File Handling](#file-handling)
-- [File Uploading](#file-uploading)
-- [Exceptions](#exceptions)
-- [OOP](#oop)
+- [Sesiones](#sessions)
+- [Manejo de ficheros](#file-handling)
+- [Subida de ficheros](#file-uploading)
+- [Excepciones](#exceptions)
+- [POO](#oop)
 
-## Initialize php
+## Empezar php
 
-For using php, we need to create a .php file.
-Once that, we will write the php tags:
+Para usar php, necesitamos crear un archivo .php.
+Una vez eso, escribiremos las etiquetas php:
 
 ```php
 <?php
-// code here
+// el código aquí
 ?>
 ```
 
-### How PHP works
+### Como trabaja PHP
 
-First of all, PHP runs in the server so to run it you will need a server. I recommend for beginners to start with XAMPP, that will install everything needed : [xampp website](https://www.apachefriends.org/es/index.html)
+Primero de todo, PHP corre en el servidor con lo cual, para hacerlo funcionar necesitaremos un servidor. Recomiendo para principiantes el iniciar con XAMPP, que instalará todo lo que necesitamos : [web de xampp](https://www.apachefriends.org/es/index.html)
 
-When entering a page, the browser send a request to the server, then PHP code is processed (browsers don't understand php code), after that, the server sends the right html back to the browser and then is when the user see and can interact with the page.
+Cuando entramos a una página, el navegador manda una petición al servidor, entonces es cuando el código PHP es procesado (el navegador no entiende ni procesa el código php), depués de eso, el servidor envía el html correcto de vuelta al navegador y es entonces cuando el usuario ve y puede interactuar con la página.
 
-### Comments
+### Commentarios
 
-- single line comments: `//inline coment`
+- comentarios de una sola líne: `//comentarios en línea`
 
-- multiple lines comments:
+- comentarios de multiples líneas:
   ```php
   /*
-  This is a php comment
-  in multiple lines
+  Este es un comentario
+  multilínea en php
   */
   ```
 
-> Semi-colons at end are very important!
+> ¿Los puntos y comas (;) al final de la línea son vitales!
 
-## Output
+## Salida
 
 ### `echo`
 
-You can output strings, numbres, html, etc...
+Puede renderizar cadenas de texto, números, html, etc....
 
 ```php
-echo 123, 'Hello', 10.5; //123Hello10.5
+echo 123, 'Hola', 10.5; //123Hola10.5
 ```
 
 ### `print`
 
-Like `echo` but with only one argument
+Parecido a `echo` pero solo pudiendo renderizar un elemento.
 
 ```php
 print 123; // 123
@@ -76,7 +76,7 @@ print 123; // 123
 
 ### `print_r()`
 
-It's a function and it is most used to print arrays and single values
+Es una función y es usada sobre todo para renderizar arrays y valores únicos.
 
 ```php
 print_r([1,2,3]);
@@ -85,10 +85,10 @@ print_r([1,2,3]);
 
 ### `var_dump()`
 
-A function that returns more info (data type and length)
+Una función que devuelve más información (tipo de dato y longitud).
 
 ```php
-var_dump('Hello'); // string(5) "Hello"
+var_dump('Hola'); // string(4) "Hola"
 
 var_dump([1,2,3]);
 // array(3) { [0]=> int(1) [1]=> int(2) [2]=> int(3) }
@@ -96,10 +96,10 @@ var_dump([1,2,3]);
 
 ### var_export()
 
-Similar to `var_dump()` but this returns a string representation of a variable
+Similar al `var_dump()` pero esto devuelve una string representation of a variable.
 
 ```php
-var_export('Hello'); // 'Hello'
+var_export('Hola'); // 'Hola'
 
 var_export([1,2,3]);
 // array ( 0 => 1, 1 => 2, 2 => 3, )
@@ -107,69 +107,69 @@ var_export([1,2,3]);
 
 ## Variables
 
-### Types
+### Tipos
 
 - String
-  : Series of chracters surrounded by quotes or doble quotes
+  : Una serie de carácteres rodeados por comillas o comillas dobles
 - Integer
-  : Whole number
+  : Número entero
 - Float
-  : Decimal number
+  : Número decimal
 - Boolean
-  : True or False
+  : Verdadero o falso
 - Array
-  : Special variable, wich can hold mor than one value
+  : Esta es una variable especial, la cual puede tener más de un valor
 - Object
-  : A class
+  : Una clase
 - NULL
-  : Empty variable
+  : Variable vacía
 - Resource
-  : Special variable that holds a resource
+  : Variable special que tiene un recurso
 
-### Rules
+### Reglas
 
-- Variables must be prefixed with $
-- Variables must start with a letter or the underscore character ( \_ )
-- Variables can´t start with a number
-- Variables can only contain alpha-numeric and underscores characters
+- Las variables deben tener como prefijo `$`.
+- Las variables deben empezar con una letra o barra baja ( \_ ).
+- Las variables no pueden empezar con un número.
+- Las variables solo pueden contener carácteres alfanuméricos y barras bajas :
   - A-z
   - 0-9
   - \_
-- Variables are case-sensitive ($name it's not equal to $NAME)
+- Las variables distinguen entre mayúsculas y minúsculas ($nombre no es igual que $NOMBRE o $Nombre).
 
-### Declaring variables
-
-```php
-$name = 'Harold'; // String
-$age = 25; //Number
-$money_in_the_bank = 763.83; // Float
-$has_kids = false; // Boolean
-```
-
-#### Strings with variables
-
-To print the value of a variable in a string,you can concatenate it :
+### DEclarando variables
 
 ```php
-echo $name . ' is ' . $age . ' years old';
-// Harold is 25 years old
+$nombre = 'Federico'; // String
+$edad = 25; //Number
+$dinero_en_el_banco = 763.83; // Float
+$tiene_hijos = false; // Boolean
 ```
 
-or, use double quotes :
+#### Texto con variables
+
+Para renderizar el valor de una variable en una cadena de texto, puedes concatenarla :
 
 ```php
-echo "$name is $age years old";
-// Harold is 25 years old
+echo $nombre . ' tiene ' . $edad . ' años';
+// Federico tiene 25 años
 ```
 
-also, like in javascript, you can add {} to the variables :
+o, con comillas dobles :
 
 ```php
-echo "${name} is ${age} years old";
-// Harold is 25 years old
+echo "$nombre tiene $edad años";
+// Federico tiene 25 años
 ```
 
-### Operations
+también, como en javascript, puedes añadir `{}` a las variables :
+
+```php
+echo "${nombre} tiene ${edad} años";
+// Federico tiene 25 años
+```
+
+### Operaciones
 
 ```php
 echo 10 + 5; // 15
@@ -180,129 +180,129 @@ echo 10 / 5; // 2
 echo 10 % 5; // 0
 ```
 
-## Constants
+## Constantes
 
-A constant is some data or value that will never going to change all across your application (database credentials, host, etc...)
+Una constante es un dato o valor que nunca va a cambiar a lo largo de nuestra aplicación (base de datos, crojoenciales, hosts, etc...)
 
-To create a constant you have to use the `define()` function:
+Para crear una constante tienes que usar lo función `define()` :
 
 ```php
 define('HOST','localhost');
-define('PORT','3000');
+define('PUERTO','3000');
 
 echo HOST; // localhost
-var_dump(PORT); // int(3000)
+var_dump(PUERTO); // int(3000)
 ```
 
 ## Arrays
 
-Arrays are data types or data structures that hold multiple values.
+Los arrays son tipos o estructuras de datos que tienen o alvergan multiples valores.
 
-There are two different ways to create them :
+Hay principalmente, dos formas distintas de crearlos :
 
 - ```php
-  $numbers = [15,22,36,41];
+  $numeros = [15,22,36,41];
   ```
 - ```php
-  $fruits = array('apple','orange','pear');
+  $frutas = array('manzana','naranja','pera');
   ```
 
-For printing the values of the array, we can use the specific output methods mentioned in [output section](#output) :
+Para renderizar los valores del array, podemos usar los métodos específicos mencionados en la sección de [salida](#salida) :
 
 ```php
-print_r($numbers);
+print_r($numeros);
 // Array ( [0] => 15 [1] => 22 [2] => 36 [3] => 41 )
 
-var_dump($numbers);
+var_dump($numeros);
 // array(4) { [0]=> int(15) [1]=> int(22) [2]=> int(36) [3]=> int(41) }
 
-var_export($numbers)
+var_export($numeros)
 // array ( 0 => 15, 1 => 22, 2 => 36, 3 => 41, )
 ```
 
-If we want to have access to a concrete value, we can do it by their index, but, be carefull, because **arrays index start at 0**, so the first stored value is in the 0 position:
+Si queremos acceder a un valor concreto, podemos hacerlo con su índice, pero, ten cuidado, porque **el índice de los arrays empieza en 0**, por lo tanto, el primer valor guardado está en la posición 0:
 
 ```php
-echo $fruits[0] // apple
-echo $fruits[1] // orange
+echo $frutas[0] // manzana
+echo $frutas[1] // naranja
 ```
 
-### Associative Array
+### Array asociativo
 
-The associative array is a way to create a array and customize the index.
+El array asociativo es una forma de crar un array y prsonalizar el índice.
 
-_The keys (indexs) can be numbers or string_
+_Las keys (índices) pueden ser números o texto_
 
-1. **With Numbers:**
+1. **Con Números :**
 
 - ```php
-    $colors = [
-    1 => 'red',
-    2 => 'blue',
-    3 => 'green',
-    5 => 'purple',
-    7 => 'gray',
-    11 => 'brown'
+    $colores = [
+    1 => 'rojo',
+    2 => 'azul',
+    3 => 'verde',
+    5 => 'morado',
+    7 => 'gris',
+    11 => 'marrón'
     ];
   ```
 - ```php
-  print_r($colors);
-  // Array ( [1] => red [2] => blue [3] => green [5] => purple [7] => gray [11] => brown )
+  print_r($colores);
+  // Array ( [1] => rojo [2] => azul [3] => verde [5] => morado [7] => gris [11] => marrón )
 
-  var_dump($colors);
-  // array(6) { [1]=> string(3) "red" [2]=> string(4) "blue" [3]=> string(5) "green" [5]=> string(6) "purple" [7]=> string(4) "gray" [11]=> string(5) "brown" }
+  var_dump($colores);
+  // array(6) { [1]=> string(3) "rojo" [2]=> string(4) "azul" [3]=> string(5) "verde" [5]=> string(6) "morado" [7]=> string(4) "gris" [11]=> string(5) "marrón" }
 
-  var_export($colors);
-  // array ( 1 => 'red', 2 => 'blue', 3 => 'green', 5 => 'purple', 7 => 'gray', 11 => 'brown', )
+  var_export($colores);
+  // array ( 1 => 'rojo', 2 => 'azul', 3 => 'verde', 5 => 'morado', 7 => 'gris', 11 => 'marrón', )
 
-  echo $colors[1]; // red
+  echo $colores[1]; // rojo
   ```
 
-2. **With Strings:**
+2. **Con texto:**
 
 - ```php
     $hex = [
-    'red'=>'#f00',
-    'green'=>'#0f0',
-    'blue'=>'#00f',
-    'black'=>'#000',
-    'white'=>'#fff'
+    'rojo'=>'#f00',
+    'verde'=>'#0f0',
+    'azul'=>'#00f',
+    'negro'=>'#000',
+    'blanco'=>'#fff'
     ];
   ```
 - ```php
     print_r($hex);
-    // Array ( [red] => #f00 [green] => #0f0 [blue] => #00f [black] => #000 [white] => #fff )
+    // Array ( [rojo] => #f00 [verde] => #0f0 [azul] => #00f [negro] => #000 [blanco] => #fff )
 
     var_dump($hex);
-    // array(5) { ["red"]=> string(4) "#f00" ["green"]=> string(4) "#0f0" ["blue"]=> string(4) "#00f" ["black"]=> string(4) "#000" ["white"]=> string(4) "#fff" }
+    // array(5) { ["rojo"]=> string(4) "#f00" ["verde"]=> string(4) "#0f0" ["azul"]=> string(4) "#00f" ["negro"]=> string(4) "#000" ["blanco"]=> string(4) "#fff" }
 
     var_export($hex);
-    // array ( 'red' => '#f00', 'green' => '#0f0', 'blue' => '#00f', 'black' => '#000', 'white' => '#fff', )
+    // array ( 'rojo' => '#f00', 'verde' => '#0f0', 'azul' => '#00f', 'negro' => '#000', 'blanco' => '#fff', )
 
-    echo $hex['red']; // #f00
+    echo $hex['rojo']; // #f00
   ```
 
-  _This ways are similar to javascript objects or python dictionaries_
+  _Esta forma es parecida a los objetos en javascript o los diccionarios de python_
 
-### Multidimensional Array
+### Array Multidimensional
 
-This type of arrays are the ones who include an array inside itselfs (array inside other array).
+Este tipo de arrays son los que incluyen un array dentro (un array dentro de otro array).
 
 ```php
 $people = [
     [
-        'first_name' => 'Jhon',
-        'last_name' => 'Doe',
+        'primer_nombre' => 'Jhon',
+        'primer_apellido' => 'Doe',
         'email' => 'jhondoe@gmail.com'
     ],
     [
-        'first_name' => 'Elena',
-        'last_name' => 'Doe',
+        'primer_nombre' => 'Elena',
+        'primer_apellido' => 'Doe',
         'email' => 'elenadoe@gmail.com'
     ],
     [
-        'first_name' => 'Harold',
-        'last_name' => 'Cooper',
+        'primer_nombre' => 'Harold',
+        'primer_apellido' => 'Cooper',
         'email' => 'harold.cooper@gmail.com'
     ]
 ];
@@ -320,18 +320,18 @@ As this type of array is similar to json, we can return it in json format by sim
 print_r(json_encode($people));
 /* [
     {
-        "first_name":"Jhon",
-        "last_name":"Doe",
+        "primer_nombre":"Jhon",
+        "primer_apellido":"Doe",
         "email":"jhondoe@gmail.com"
     },
     {
-        "first_name":"Elena",
-        "last_name":"Doe",
+        "primer_nombre":"Elena",
+        "primer_apellido":"Doe",
         "email":"elenadoe@gmail.com"
     },
     {
-        "first_name":"Harold",
-        "last_name":"Cooper",
+        "primer_nombre":"Harold",
+        "primer_apellido":"Cooper",
         "email":"harold.cooper@gmail.com"
     }
     ]
@@ -372,8 +372,8 @@ if (condition) {
 Example :
 
 ```php
-$age = 19;
-if ($age >= 18) {
+$edad = 19;
+if ($edad >= 18) {
     echo 'You are old enough to vote';
 }
 // You are old enough to vote
@@ -396,8 +396,8 @@ if (condition) {
 Example :
 
 ```php
-$age = 19;
-if ($age >= 18) {
+$edad = 19;
+if ($edad >= 18) {
     echo 'You are old enough to vote';
 } else {
     echo "You still can't vote";
@@ -541,19 +541,19 @@ Example :
 $favcolor = 'yellow';
 
 switch ($favcolor) {
-    case 'blue':
-    echo 'Your favorite color is blue';
+    case 'azul':
+    echo 'Your favorite color is azul';
     break;
-    case 'red':
-    echo 'Your favorite color is red';
+    case 'rojo':
+    echo 'Your favorite color is rojo';
     break;
-    case 'green':
-    echo 'Your favorite color is green';
+    case 'verde':
+    echo 'Your favorite color is verde';
     break;
     default:
-    echo 'Your favorite color is not red, blue or green'
+    echo 'Your favorite color is not rojo, azul or verde'
 }
-// Your favorite color is not red, blue or green
+// Your favorite color is not rojo, azul or verde
 ```
 
 But let explain what happened here. Each case work as an `elseif` condition, but, if all of them are false, it will execute the `default`, that's like an `else`.
@@ -669,21 +669,21 @@ As we sais before, there are different types of arrays so... let's try this `for
 
 ```php
 $hex = [
-  'red'=>'#f00',
-  'green'=>'#0f0',
-  'blue'=>'#00f',
-  'black'=>'#000',
-  'white'=>'#fff'
+  'rojo'=>'#f00',
+  'verde'=>'#0f0',
+  'azul'=>'#00f',
+  'negro'=>'#000',
+  'blanco'=>'#fff'
 ];
 
 foreach($hex as $key => $color) {
   echo "$key is $color <br/>";
 }
-/*red is #f00
-green is #0f0
-blue is #00f
-black is #000
-white is #fff
+/*rojo is #f00
+verde is #0f0
+azul is #00f
+negro is #000
+blanco is #fff
 */
 ```
 
@@ -734,7 +734,7 @@ function say_hi () {
 say_hi(); // Hello!
 ```
 
-As we declared the variable `$hi` inside the function `say_hi`, it will have access to it's value, but, if we try to call this variable outside the function, we will get an error!:
+As we declarojo the variable `$hi` inside the function `say_hi`, it will have access to it's value, but, if we try to call this variable outside the function, we will get an error!:
 
 ```php
 function say_hi () {
@@ -896,7 +896,7 @@ This type of functions are usefull for getting information on a specific array o
 For the next examples we will use this arrays :
 
 ```php
-$fruits = ['apple','orange','pear'];
+$frutas = ['apple','orange','pear'];
 ```
 
 ### Get length
@@ -904,7 +904,7 @@ $fruits = ['apple','orange','pear'];
 For getting the length of an array we will use the `count()` function :
 
 ```php
-echo count($fruits); // 3
+echo count($frutas); // 3
 ```
 
 ### Search array
@@ -914,7 +914,7 @@ Search inside the array for a especific value.
 For that we use the `in_array()` function, that return true or false, true if any value met the requirements, and false if don't.
 
 ```php
-echo in_array('orange',$fruits); // 1
+echo in_array('orange',$frutas); // 1
 ```
 
 It returns 1 because an `echo` of `true`, displays 1, while an `echo` of `false` desn't display anything.
@@ -926,25 +926,25 @@ If we want to add certain value to an array, there are some ways to do it:
 **Add to the end :**
 
 - ```php
-  $fruits[] = 'grape';
+  $frutas[] = 'grape';
 
-  print_r($fruits);
+  print_r($frutas);
   // Array ( [0] => apple [1] => orange [2] => pear [3] => grape )
   ```
 
 - ```php
-    array_push($fruits,'grape','blueberry');
+    array_push($frutas,'grape','azulberry');
 
-    print_r($fruits);
-    // Array ( [0] => apple [1] => orange [2] => pear [3] => grape [4] => blueberry )
+    print_r($frutas);
+    // Array ( [0] => apple [1] => orange [2] => pear [3] => grape [4] => azulberry )
   ```
 
   **Add to the beginning :**
 
 - ```php
-  array_unshift($fruits,'grape');
+  array_unshift($frutas,'grape');
 
-  print_r($fruits);
+  print_r($frutas);
   // Array ( [0] => grape [1] => apple [2] => orange [3] => pear )
   ```
 
@@ -953,27 +953,27 @@ If we want to add certain value to an array, there are some ways to do it:
 **Remove from the end :**
 
 ```php
-array_pop($fruits);
+array_pop($frutas);
 
-print_r($fruits);
+print_r($frutas);
 // Array ( [0] => apple [1] => orange )
 ```
 
 **Remove from the beginning :**
 
 ```php
-array_shift($fruits);
+array_shift($frutas);
 
-print_r($fruits);
+print_r($frutas);
 // Array ( [0] => orange [1] => pear )
 ```
 
 **Remove specific elemen :**
 
 ```php
-unset($fruits[1]);
+unset($frutas[1]);
 
-print_r($fruits);
+print_r($frutas);
 // Array ( [0] => apple [2] => pear )
 ```
 
@@ -982,7 +982,7 @@ print_r($fruits);
 For this example, we will split the array in 2 chunks, but you can do it in as many chunks as you want and can.
 
 ```php
-$chunked_array = array_chunk($fruits,2);
+$chunked_array = array_chunk($frutas,2);
 
 print_r($chunked_array);
 // Array ( [0] => Array ( [0] => apple [1] => orange ) [1] => Array ( [0] => pear ) )
@@ -1020,7 +1020,7 @@ print_r($arr3);
 For this example we will use this new arrays:
 
 ```php
-$a = ['red','green','blue'];
+$a = ['rojo','verde','azul'];
 $b = ['avacado','apple','bannana'];
 ```
 
@@ -1030,7 +1030,7 @@ Fr combining those 2 arrays, we use the built in function called `array_combine(
 $c = array_combine($a,$b);
 
 print_r($c);
-// Array ( [red] => avacado [green] => apple [blue] => bannana )
+// Array ( [rojo] => avacado [verde] => apple [azul] => bannana )
 ```
 
 _What had happen?_ The `$a` array has been taken as index and the `$b` array as values, so, the first value of the `$a` is the index of the first value of array `$b`
@@ -1044,7 +1044,7 @@ _This will return the `$a` array_
 $keys = array_keys($c);
 
 print_r($keys);
-// Array ( [0] => red [1] => green [2] => blue )
+// Array ( [0] => rojo [1] => verde [2] => azul )
 ```
 
 **Flip the array**
@@ -1053,7 +1053,7 @@ print_r($keys);
 $flipped = array_flip($c);
 
 print_r($flipped);
-// Array ( [avacado] => red [apple] => green [bannana] => blue )
+// Array ( [avacado] => rojo [apple] => verde [bannana] => azul )
 ```
 
 ### Array with range of numbers
@@ -1091,14 +1091,14 @@ print_r($lessThan10);
 // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 [5] => 6 [6] => 7 [7] => 8 [8] => 9 )
 ```
 
-### Reduce an array
+### rojouce an array
 
-What if we want to sum, multiply, divide or whatever with all the array values? For that case, we hav a built in array function called `array_reduce()`.
+What if we want to sum, multiply, divide or whatever with all the array values? For that case, we hav a built in array function called `array_rojouce()`.
 
-This function takes 2 arguments, first to array we want to reduce, and second a function that takes other 2 arguments, first one is the `$carry` that holds the return value of the previous iteration, and the second one is the name of the values.
+This function takes 2 arguments, first to array we want to rojouce, and second a function that takes other 2 arguments, first one is the `$carry` that holds the return value of the previous iteration, and the second one is the name of the values.
 
 ```php
-$reduce = array_reduce(
+$rojouce = array_rojouce(
     $array,
     function ($carry, $arr) {
         return $carry + $arr;
@@ -1109,7 +1109,7 @@ $reduce = array_reduce(
 Example :
 
 ```php
-$sum_numbers = array_reduce($numbers, fn($carry, $number)=> $carry + $number);
+$sum_numbers = array_rojouce($numbers, fn($carry, $number)=> $carry + $number);
 
 echo $sum_numbers
 // 45
@@ -1242,7 +1242,7 @@ echo $input_value;
 // this will give an alert in the browser
 ```
 
-Imagine that the users could run any javascript and change the functionality of your web, and even worst, change or delete important information like the stored in your database!
+Imagine that the users could run any javascript and change the functionality of your web, and even worst, change or delete important information like the storojo in your database!
 
 For this we have two ways to fix it :
 
@@ -1369,7 +1369,7 @@ We have added several things :
 - action
   : this will send the data to the specified php file in this atribute ('/' send to the same file).
 
-Now, if we click in the submit button, we will be redirected to the `profile.php` file, and we will pass to it the data :
+Now, if we click in the submit button, we will be rojoirected to the `profile.php` file, and we will pass to it the data :
 
 ```php
 <?php
@@ -1507,7 +1507,7 @@ if (isset($_POST['submit'])) {
 
 ## Cookies
 
-Cookies ara a mechanism for storing data in the remote browser and thus tracking or identifying return users. You can set specific data to be stored in the browser, and then retrieve it when the user visits the site again.
+Cookies ara a mechanism for storing data in the remote browser and thus tracking or identifying return users. You can set specific data to be storojo in the browser, and then retrieve it when the user visits the site again.
 
 ### Set cookie
 
@@ -1549,7 +1549,7 @@ setcookie('name','',time()-86400);
 
 Sessions are a way to store information (in variables) to be used across multiple pages.
 
-Unlike cookies, sessions are stored on the server and not in the client.
+Unlike cookies, sessions are storojo on the server and not in the client.
 
 First of all, for using sessions in any php file, you need to put the "initializer" :
 
@@ -1578,7 +1578,7 @@ $username = $_SESSION['username'];
 ```php
 session_destroy();
 
-// we can redirect to other page
+// we can rojoirect to other page
 header('Location:/index.php');
 ```
 
