@@ -96,7 +96,8 @@ A function that returns more info (data type and length)
 var_dump('Hello'); // string(5) "Hello"
 
 var_dump([1,2,3]);
-// array(3) { [0]=> int(1) [1]=> int(2) [2]=> int(3) }
+// array(3) { [0]=> int(1) [1]=> int(2) 
+//[2]=> int(3) }
 ```
 
 ### var_export()
@@ -219,7 +220,8 @@ print_r($numbers);
 // Array ( [0] => 15 [1] => 22 [2] => 36 [3] => 41 )
 
 var_dump($numbers);
-// array(4) { [0]=> int(15) [1]=> int(22) [2]=> int(36) [3]=> int(41) }
+// array(4) { [0]=> int(15) [1]=> int(22) 
+//[2]=> int(36) [3]=> int(41) }
 
 var_export($numbers)
 // array ( 0 => 15, 1 => 22, 2 => 36, 3 => 41, )
@@ -252,13 +254,22 @@ _The keys (indexs) can be numbers or string_
   ```
 - ```php
   print_r($colors);
-  // Array ( [1] => red [2] => blue [3] => green [5] => purple [7] => gray [11] => brown )
+  // Array ( [1] => red
+  //[2] => blue
+  //[3] => green
+  //[5] => purple
+  //[7] => gray
+  //[11] => brown )
 
   var_dump($colors);
-  // array(6) { [1]=> string(3) "red" [2]=> string(4) "blue" [3]=> string(5) "green" [5]=> string(6) "purple" [7]=> string(4) "gray" [11]=> string(5) "brown" }
+  // array(6) { [1]=> string(3) "red" [2]=> string(4) "blue"
+  // [3]=> string(5) "green" [5]=> string(6) "purple"
+  // [7]=> string(4) "gray" [11]=> string(5) "brown" }
 
   var_export($colors);
-  // array ( 1 => 'red', 2 => 'blue', 3 => 'green', 5 => 'purple', 7 => 'gray', 11 => 'brown', )
+  // array ( 1 => 'red', 2 => 'blue',
+  //3 => 'green', 5 => 'purple',
+  //7 => 'gray', 11 => 'brown', )
 
   echo $colors[1]; // red
   ```
@@ -276,13 +287,23 @@ _The keys (indexs) can be numbers or string_
   ```
 - ```php
     print_r($hex);
-    // Array ( [red] => #f00 [green] => #0f0 [blue] => #00f [black] => #000 [white] => #fff )
+    // Array ( [red] => #f00
+    //[green] => #0f0 [blue] => #00f
+    //[black] => #000 [white] => #fff )
 
     var_dump($hex);
-    // array(5) { ["red"]=> string(4) "#f00" ["green"]=> string(4) "#0f0" ["blue"]=> string(4) "#00f" ["black"]=> string(4) "#000" ["white"]=> string(4) "#fff" }
+    // array(5) { ["red"]=> string(4) "#f00"
+    //["green"]=> string(4) "#0f0"
+    //["blue"]=> string(4) "#00f"
+    //["black"]=> string(4) "#000"
+    //["white"]=> string(4) "#fff" }
 
     var_export($hex);
-    // array ( 'red' => '#f00', 'green' => '#0f0', 'blue' => '#00f', 'black' => '#000', 'white' => '#fff', )
+    // array ( 'red' => '#f00',
+    //'green' => '#0f0',
+    //'blue' => '#00f',
+    //'black' => '#000',
+    //'white' => '#fff', )
 
     echo $hex['red']; // #f00
   ```
@@ -394,7 +415,8 @@ But, what if we want to return oher value if the conditions are not true? This c
 if (condition) {
     // code to be executed if condition is true
 } else {
-    // if the above code it's not true, this code will be executed
+    // if the above code it's not true, 
+    //this code will be executed
 }
 ```
 
@@ -424,7 +446,8 @@ if (condition1) {
 } elseif (condition2) {
     // code to be executed if condition2 is true
 } else {
-    // if none of the above conditions are true, this code will be executed
+    // if none of the above conditions are 
+    //true, this code will be executed
 }
 ```
 
@@ -934,14 +957,19 @@ If we want to add certain value to an array, there are some ways to do it:
   $fruits[] = 'grape';
 
   print_r($fruits);
-  // Array ( [0] => apple [1] => orange [2] => pear [3] => grape )
+  // Array ( [0] => apple [1] => orange 
+  //[2] => pear [3] => grape )
   ```
 
 - ```php
     array_push($fruits,'grape','blueberry');
 
     print_r($fruits);
-    // Array ( [0] => apple [1] => orange [2] => pear [3] => grape [4] => blueberry )
+    // Array ( [0] => apple 
+    //[1] => orange 
+    //[2] => pear 
+    //[3] => grape 
+    //[4] => blueberry )
   ```
 
   **Add to the beginning :**
@@ -950,7 +978,8 @@ If we want to add certain value to an array, there are some ways to do it:
   array_unshift($fruits,'grape');
 
   print_r($fruits);
-  // Array ( [0] => grape [1] => apple [2] => orange [3] => pear )
+  // Array ( [0] => grape [1] => apple 
+  //[2] => orange [3] => pear )
   ```
 
 ### Remove from array
@@ -990,7 +1019,11 @@ For this example, we will split the array in 2 chunks, but you can do it in as m
 $chunked_array = array_chunk($fruits,2);
 
 print_r($chunked_array);
-// Array ( [0] => Array ( [0] => apple [1] => orange ) [1] => Array ( [0] => pear ) )
+// Array ( [0] => Array (
+  //[0] => apple
+//[1] => orange )
+//[1] => Array (
+  //[0] => pear ) )
 ```
 
 ### Concatenate arrays
@@ -1069,7 +1102,15 @@ Many times we will want to have an array with numbers from 0 to 9, or from one t
 $numbers = range(1,9);
 
 print_r($numbers)
-// Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 [5] => 6 [6] => 7 [7] => 8 [8] => 9 )
+// Array ( [0] => 1
+//[1] => 2
+//[2] => 3
+//[3] => 4
+//[4] => 5
+//[5] => 6
+//[6] => 7
+//[7] => 8
+//[8] => 9 )
 ```
 
 ### Map an array
@@ -1084,7 +1125,12 @@ But as we learned previously, the return itself does not display anything, so we
 
 ```php
 print_r($newNumbers);
-// Array ( [0] => Number 1 [1] => Number 2 [2] => Number 3 [3] => Number 4 [4] => Number 5 [5] => Number 6 [6] => Number 7 [7] => Number 8 [8] => Number 9 )
+// Array ( [0] => Number 1
+//[1] => Number 2
+//[2] => Number 3 [3] => Number 4
+//[4] => Number 5 [5] => Number 6 [
+  //6] => Number 7 [7] => Number 8
+  //[8] => Number 9 )
 ```
 
 ### Filter an array
@@ -1093,7 +1139,15 @@ print_r($newNumbers);
 $lessThan10 = array_filter($numbers,fn($number)=> $number < 10);
 
 print_r($lessThan10);
-// Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 [5] => 6 [6] => 7 [7] => 8 [8] => 9 )
+// Array ( [0] => 1
+//[1] => 2
+//[2] => 3
+//[3] => 4
+//[4] => 5
+//[5] => 6
+//[6] => 7
+//[7] => 8
+//[8] => 9 )
 ```
 
 ### Reduce an array
