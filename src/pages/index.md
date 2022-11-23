@@ -1,3 +1,8 @@
+---
+layout: ../layouts/Layout.astro
+title: PHP EN
+---
+
 # PHP
 
 > This php beginner friendly tutorial is from [this video](https://www.youtube.com/watch?v=BUCiSSyIGGU) and this is the [original repo](https://github.com/bradtraversy/php-crash)
