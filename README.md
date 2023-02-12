@@ -293,7 +293,7 @@ $people = [
     [
         'first_name' => 'Jhon',
         'last_name' => 'Doe',
-        'email' => 'jhondoe@gmail.com'
+        'email' => 'Jhondoe@gmail.com'
     ],
     [
         'first_name' => 'Elena',
@@ -322,7 +322,7 @@ print_r(json_encode($people));
     {
         "first_name":"Jhon",
         "last_name":"Doe",
-        "email":"jhondoe@gmail.com"
+        "email":"Jhondoe@gmail.com"
     },
     {
         "first_name":"Elena",
@@ -437,7 +437,7 @@ if ($time < 12) {
 }
 ```
 
-Now, with this `elseif()` statement. you can check as many conditions you may need!
+Now, with this `elseif()` statement, you can check as many conditions you may need!
 
 However, you can also check more things apart from if something is greater, equal or less than other thing, let see two examples without using this operators:
 
@@ -771,7 +771,7 @@ function say_hi () {
   echo $hi;
 }
 
-say_hi(); // Warning: Undefined variable $hi
+say_hi(); // Hello!
 
 echo $hi; // Hello!
 ```
@@ -824,7 +824,7 @@ name();
 
 But if we try this, nothing is displayed in the browser.
 
-That is because we need and explicit `echo` to display the value of the return:
+That is because we need an explicit `echo` to display the value of the return:
 
 Example:
 
@@ -884,7 +884,7 @@ Example :
 ```php
 $sum = fn($n1,$n2) => $n1 + $n2;
 
-echo $sum(1,5); //
+echo $sum(1,5); // 6
 ```
 
 **Be careful :** If the return isn't a single line one, you have to use the `{}` and also the `return` keyword
@@ -1093,7 +1093,7 @@ print_r($lessThan10);
 
 ### Reduce an array
 
-What if we want to sum, multiply, divide or whatever with all the array values? For that case, we hav a built in array function called `array_reduce()`.
+What if we want to sum, multiply, divide or whatever with all the array values? For that case, we have a built in array function called `array_reduce()`.
 
 This function takes 2 arguments, first to array we want to reduce, and second a function that takes other 2 arguments, first one is the `$carry` that holds the return value of the previous iteration, and the second one is the name of the values.
 
@@ -1677,7 +1677,7 @@ move_uploaded_file($file_tmp,$target_dir);
 
 ## Exceptions
 
-PHP has an exception model similar to that of other programming languages. An exception can be thrown, and caught ("cached") within PHP. Code may be surrounded in a try block, to facilitate the catching of potential exceptions. Each tru must hav at least one corresponding catch or finally block.
+PHP has an exception model similar to that of other programming languages. An exception can be thrown, and caught ("cached") within PHP. Code may be surrounded in a try block, to facilitate the catching of potential exceptions. Each tru must have at least one corresponding catch or finally block.
 
 For example, we want to throw an error if we try to divide by 0:
 
@@ -1752,10 +1752,10 @@ Everything is `NULL` as we didn't specify that values, so let's into it :
 ```php
 $user1 = new User();
 $user1->name = 'Jhon';
-$user1->email = 'jhondoe@gmail.com';
+$user1->email = 'Jhondoe@gmail.com';
 $user1->password = '1234';
 print_r($user1);
-// User Object ( [name] => Jhon [email] => jhondoe@gmail.com [password] => 1234 )
+// User Object ( [name] => Jhon [email] => Jhondoe@gmail.com [password] => 1234 )
 ```
 
 ### Access modifiers
@@ -1816,13 +1816,13 @@ Now, thanks to the constructor, when we instantiate a user we can pass it the va
 
 ```php
 $user1 = new User('Brad','brad@gmail.com','securePassword');
-$user2 = new User('Jhon','jhondoe@gmail.com','1234');
+$user2 = new User('Jhon','Jhondoe@gmail.com','1234');
 
 print_r($user1);
 // User Object ( [name] => Brad [email] => brad@gmail.com [password] => securePassword )
 echo '<br/>';
 print_r($user2);
-// User Object ( [name] => Jhon [email] => jhondoe@gmail.com [password] => 1234 )
+// User Object ( [name] => Jhon [email] => Jhondoe@gmail.com [password] => 1234 )
 ```
 
 ### Inheritance

@@ -9,7 +9,7 @@
 - [Variables](#variables)
 - [Constantes](#constants)
 - [Arrays](#arrays)
-- [Operatodores](#operators)
+- [Operadores](#operators)
 - [Condicionales](#conditionals)
 - [Bucles](#loops)
 - [Funciones](#functions)
@@ -42,9 +42,9 @@ Primero de todo, PHP corre en el servidor con lo cual, para hacerlo funcionar ne
 
 Cuando entramos a una página, el navegador manda una petición al servidor, entonces es cuando el código PHP es procesado (el navegador no entiende ni procesa el código php), depués de eso, el servidor envía el html correcto de vuelta al navegador y es entonces cuando el usuario ve y puede interactuar con la página.
 
-### Commentarios
+### Comentarios
 
-- comentarios de una sola líne: `//comentarios en línea`
+- comentarios de una sola línea: `//comentarios en línea`
 
 - comentarios de multiples líneas:
   ```php
@@ -110,7 +110,7 @@ var_export([1,2,3]);
 ### Tipos
 
 - String
-  : Una serie de carácteres rodeados por comillas o comillas dobles
+  : Una serie de caracteres rodeados por comillas o comillas dobles
 - Integer
   : Número entero
 - Float
@@ -131,7 +131,7 @@ var_export([1,2,3]);
 - Las variables deben tener como prefijo `$`.
 - Las variables deben empezar con una letra o barra baja ( \_ ).
 - Las variables no pueden empezar con un número.
-- Las variables solo pueden contener carácteres alfanuméricos y barras bajas :
+- Las variables solo pueden contener caracteres alfanuméricos y barras bajas :
   - A-z
   - 0-9
   - \_
@@ -148,7 +148,7 @@ $tiene_hijos = false; // Boolean
 
 #### Texto con variables
 
-Para renderizar el valor de una variable en una cadena de texto, puedes concatenarla :
+Para renderizar el valor de una variable en una cadena de texto, la puedes concatenar :
 
 ```php
 echo $nombre . ' tiene ' . $edad . ' años';
@@ -182,7 +182,7 @@ echo 10 % 5; // 0
 
 ## Constantes
 
-Una constante es un dato o valor que nunca va a cambiar a lo largo de nuestra aplicación (base de datos, crojoenciales, hosts, etc...)
+Una constante es un dato o valor que nunca va a cambiar a lo largo de nuestra aplicación (base de datos, credenciales, hosts, etc...)
 
 Para crear una constante tienes que usar lo función `define()` :
 
@@ -196,7 +196,7 @@ var_dump(PUERTO); // int(3000)
 
 ## Arrays
 
-Los arrays son tipos o estructuras de datos que tienen o alvergan multiples valores.
+Los arrays son tipos o estructuras de datos que tienen o albergan multiples valores.
 
 Hay principalmente, dos formas distintas de crearlos :
 
@@ -229,7 +229,7 @@ echo $frutas[1] // naranja
 
 ### Array asociativo
 
-El array asociativo es una forma de crar un array y prsonalizar el índice.
+El array asociativo es una forma de crear un array y personalizar el índice.
 
 _Las keys (índices) pueden ser números o texto_
 
@@ -289,290 +289,291 @@ _Las keys (índices) pueden ser números o texto_
 Este tipo de arrays son los que incluyen un array dentro (un array dentro de otro array).
 
 ```php
-$people = [
+$personas = [
     [
-        'primer_nombre' => 'Jhon',
-        'primer_apellido' => 'Doe',
-        'email' => 'jhondoe@gmail.com'
+        'primer_nombre' => 'Federico',
+        'primer_apellido' => 'Valverde',
+        'email' => 'fedevalverde@gmail.com'
     ],
     [
-        'primer_nombre' => 'Elena',
-        'primer_apellido' => 'Doe',
-        'email' => 'elenadoe@gmail.com'
+        'primer_nombre' => 'Toni',
+        'primer_apellido' => 'Kross',
+        'email' => 'tonikross@gmail.com'
     ],
     [
-        'primer_nombre' => 'Harold',
-        'primer_apellido' => 'Cooper',
-        'email' => 'harold.cooper@gmail.com'
+        'primer_nombre' => 'Luka',
+        'primer_apellido' => 'Modric',
+        'email' => 'modric.luka@gmail.com'
     ]
 ];
 ```
 
-And for returning some especific value we use the index as before:
+Y para conseguir algún valor específico usamos, al igual que antes, el índice:
 
 ```php
-echo $people[1]['email']; // elenadoe@gmail.com
+echo $personas[1]['email']; // tonikross@gmail.com
 ```
 
-As this type of array is similar to json, we can return it in json format by simply usig json_encode function :
+Como este tipo de array es similar al formato json, podemos hacer que devuelva los valores en ese formato usando la función `json_encode`:
 
 ```php
-print_r(json_encode($people));
+print_r(json_encode($personas));
 /* [
     {
-        "primer_nombre":"Jhon",
-        "primer_apellido":"Doe",
-        "email":"jhondoe@gmail.com"
+        "primer_nombre":"Federico",
+        "primer_apellido":"Valverde",
+        "email":"fedevalverde@gmail.com"
     },
     {
-        "primer_nombre":"Elena",
-        "primer_apellido":"Doe",
-        "email":"elenadoe@gmail.com"
+        "primer_nombre":"Toni",
+        "primer_apellido":"Kross",
+        "email":"tonikross@gmail.com"
     },
     {
-        "primer_nombre":"Harold",
-        "primer_apellido":"Cooper",
-        "email":"harold.cooper@gmail.com"
+        "primer_nombre":"Luka",
+        "primer_apellido":"Modric",
+        "email":"modric.luka@gmail.com"
     }
     ]
 */
 ```
 
-## Operators
+## Operadores
 
 - <
-  : Less than
+  : Menor que
 - \>
-  : Greater than
+  : Mayor que
 - <=
-  : Less or equal to
+  : Menor o igual a
 - \>=
-  : Greater or equal to
+  : Mayor o igual a
 - ==
-  : Equal to
+  : Igual a
 - ===
-  : Identical to
+  : Idéntico a
 - !=
-  : Not equal to
+  : No igual a
 - !==
-  : Not identical to
+  : No idéntico a
 
-## Conditionals
+## Condicionales
 
-### if
+### `if`
 
-If statement syntax :
+La sintaxis del `if` es así :
 
 ```php
 if (condition) {
-    // code to be executed if condition is true
+    // código a ejecutar si la condición es verdadera
 }
 ```
 
-Example :
+Un ejemplo :
 
 ```php
 $edad = 19;
 if ($edad >= 18) {
-    echo 'You are old enough to vote';
+    echo 'Eres mayor de edad';
 }
-// You are old enough to vote
+// Eres mayor de edad
 ```
 
-As age is equal or greater than 18 (19) it will return the inside of the if as the condition is met.
+Como la edad es igual o mayor que 18 (19) devolverá lo que hay en el interior del `if` ya que la condición se cumple.
 
-#### Else
+#### `else`
 
-But, what if we want to return oher value if the conditions are not true? This can be easily managed with `else` statement:
+Pero, ¿y si quisiéramos devolver otro valor si la condición no se cumple, es decir, el `if` es `false`? Este caso lo podemos manejar usando un `else`:
 
 ```php
 if (condition) {
-    // code to be executed if condition is true
+    // código a ejecutar si la condición es verdadera
 } else {
-    // if the above code it's not true, this code will be executed
+    // si el código anterior no es true, se ejecuta este código
 }
 ```
 
-Example :
+Un ejemplo :
 
 ```php
 $edad = 19;
 if ($edad >= 18) {
-    echo 'You are old enough to vote';
+    echo 'Eres mayor de edad';
 } else {
-    echo "You still can't vote";
+    echo 'Aún eres menor de edad';
 }
-// You still can't vote
+// Aún eres menor de edad
 ```
 
-If all the above conditions ar not true, the else code will be executed, if any of them are true, php will never reach that else statement.
+Si todas las condiciones anteriores no son verdaderas (`true`), el código del `else` se ejecutará, pero si alguna de las condiciones anteriores se cumple, PHP nunca llegará hasta el `else`.
 
-#### Elseif
+#### `elseif`
 
-Now we can say 2 conditions, if one is true, it will be executed and if not, the else will be executed. But what if we need more than 2 conditions?
+Ahora tenemos hasta 2 condiciones: si una se cumple (`true`), será ejecutada, pero si no,el `else` será el que se ejecute. ¿Pero que ocurre si necesitamos más de 2 condiciones?
 
-This where we need the `elseif` statement :
+Es en este caso donde necesitamos la sentencia `elseif`:
 
 ```php
 if (condition1) {
-    // code to be executed if condition is true
+    // código a ejecutar si la condición es verdadera
 } elseif (condition2) {
-    // code to be executed if condition2 is true
+    // código a ejecutar si la condition2 es verdadera
 } else {
-    // if none of the above conditions are true, this code will be executed
+    // si ninguna de las anteriores condiciones se cumple,
+    // se ejecuta esto
 }
 ```
 
-Example :
+Un ejemplo :
 
 ```php
-$time = 16;
+$hora = 16;
 
-if ($time < 12) {
-    echo 'Good morning';
-} elseif ($time < 17) {
-    echo 'Good Afternoon';
+if ($hora < 12) {
+    echo 'Buenos días';
+} elseif ($hora < 17) {
+    echo 'Buenas tardes';
 } else {
-    echo 'Good evening';
+    echo 'Buenas noches';
 }
 ```
 
-Now, with this `elseif()` statement. you can check as many conditions you may need!
+Ahora, con la sentencia `elseif()`, se pueden comprobar tantas condiciones necesitemos!
 
-However, you can also check more things apart from if something is greater, equal or less than other thing, let see two examples without using this operators:
+Sin embargo, puedes comprobar más cosas aparte de si algo es mayor, menor o igual a otra cosa, vamos a ver algunos ejemplos que no usen estos operadores:
 
-- True or False
+- Verdadero (`true`) o Falso (`false`):
 
   ```php
-     $qualified = true;
+     $clasificado = true;
 
-     if ($qualified) {
-         echo 'Congratulations, you are qualified!';
+     if ($clasificado) {
+         echo 'Enhorabuena, estás ¡clasificado!';
      } else {
-         echo 'You are not qualified :(';
+         echo 'Vaya, no estas clasificado :(';
      }
-     // Congratulations, you are qualified!
+     // Enhorabuena, ¡estás clasificado!
   ```
 
-- Empty or not
+- Vacío o no:
 
   ```php
-  $active_users = ['Philip','Jhon','Elena'];
+  $usuarios_activos = ['Felipe','Juan','Toni'];
 
-  if (!empty($active_users)) {
-      echo "There are active users, like $active_users[0]";
+  if (!empty($usuarios_activos)) {
+      echo "Hay algunos usuarios activos, como $usuarios_activos[0]";
   } else {
-      echo 'No active users';
+      echo 'No hay usuarios activos';
   }
-  // There are active users, like Philip
+  // Hay algunos usuarios activos, como Felipe
   ```
 
 ### Ternary operators
 
-This if statement takes a lot of space, the most simple one is at least, 3 lines long. This can be shorted by using the ternary operator :
+La sentencia `if` completa ocupa bastante espacio, la manera más simple ya ocupa 3 líneas. Esto se puede resolver usando un operador ternario:
 
 ```php
-echo condition ? /*if true*/ : /*if false*/;
+echo condition ? /*si es true */ : /*si es false*/;
 ```
 
-Example :
+Un ejemplo :
 
 ```php
-$active_users = ['Philip','Jhon','Elena'];
+$usuarios_activos = ['Felipe','Juan','Toni'];
 
-echo !empty($active_users) ? 'There are active users' : 'No active users';
-// There are active users
+echo !empty($usuarios_activos) ? 'Hay algunos usuarios activos' : 'No hay usuarios activos';
+// Hay algunos usuarios activos
 ```
 
-Also, we can use these ternary operator for conditional assignement.
+También podemos usar estos operadores ternarios para asignar un valor a una condición.
 
-Example:
+Un ejemplo:
 
 ```php
-$active_users = ['Philip','Jhon','Elena'];
+$usuarios_activos = ['Felipe','Juan','Toni'];
 
-$first_active_user = !empty($active_users) ? $active_users[0] : 'No active users';
+$primer_usuario_activo = !empty($usuarios_activos) ? $usuarios_activos[0] : 'No hay usuarios activos';
 
-echo $first_active_user;
-// Philip
+echo $primer_usuario_activo;
+// Felipe
 ```
 
-But what if we actually don't want that our conditinal variable have value if the condition is not met?. What if we really don't want the `else` statement?
+Pero, ¿y si no quisiéramos que la variable tenga un valor si el `if` no se cumple?. ¿Qué pasaría si no queremos la sentencia `else`?
 
-For this problem we have two solutions:
+para esto existen dos posibles soluciones:
 
 - ```php
-    $active_users = ['Philip','Jhon','Elena'];
+    $usuarios_activos = ['Felipe','Juan','Toni'];
 
-    $first_active_user = !empty($active_users) ? $active_users[0] : null ;
-    echo $first_active_user; // Philip
+    $primer_usuario_activo = !empty($usuarios_activos) ? $usuarios_activos[0] : null ;
+    echo $primer_usuario_activo; // Felipe
   ```
 
 - ```php
-    $active_users = ['Philip','Jhon','Elena'];
+    $usuarios_activos = ['Felipe','Juan','Toni'];
 
-    $first_active_user = $active_users[0] ?? null;
-    echo $first_active_user; // Philip
+    $primer_usuario_activo = $usuarios_activos[0] ?? null;
+    echo $primer_usuario_activo; // Felipe
   ```
 
-Both are the same but, the last one is shorter!
+Ambas indican lo mismo, pero la última es más corta.
 
-### Switch
+### `switch`
 
-This conditional is very usefull if we have many conditions. This helps us to have more clean code instead of so many `elseif`.
+Este tipo de condicional es bastante útil cuando tenemos varias condiciones, lo que ayuda a tener un código más limpio, sin tantos `elseif`.
 
 ```php
 switch (variable) {
-    case value :
-    // code to execute
+    case valor :
+    // código a ejecutar
     break;
-    case other_value :
-    // code to execute
+    case otro_valor :
+    // código a ejecutar
     break;
-    // more case conditions
+    // más condiciones
     default:
-    // if none of the above are true
+    // si ninguna de las anteriores es verdadera
 }
 ```
 
-Example :
+Un ejemplo :
 
 ```php
-$favcolor = 'yellow';
+$color_favorito = 'amarillo';
 
-switch ($favcolor) {
+switch ($color_favorito) {
     case 'azul':
-    echo 'Your favorite color is azul';
+    echo 'Tu color favorito es el azul';
     break;
     case 'rojo':
-    echo 'Your favorite color is rojo';
+    echo 'Tu color favorito es el rojo';
     break;
     case 'verde':
-    echo 'Your favorite color is verde';
+    echo 'Tu color favorito es el verde';
     break;
     default:
-    echo 'Your favorite color is not rojo, azul or verde'
+    echo 'Tu color favorito no es el rojo, azul o verde'
 }
-// Your favorite color is not rojo, azul or verde
+// Tu color favorito no es el not rojo, azul o verde
 ```
 
-But let explain what happened here. Each case work as an `elseif` condition, but, if all of them are false, it will execute the `default`, that's like an `else`.
+Vamos a explicar que ha ocurrido aquí. Cada `case` funciona como una condición `elseif`, pero, si todas son falsas (`false`), ejecutará el `default`, que es como un `else`.
 
-## Loops
+## Bucles
 
-Loops are basically used to execute a piece of code while a specific condition is met and will keep executing that code until is no longuer met.
+Los bucles son usados para ejecutar un bloque de código mientras se cumple una condición específica y se seguirá ejecutando hasta que se deje de cumplir dicha condición.
 
-There diferent types of loops:
+Hay distintos tipos de bucles en PHP:
 
-### For
+### `for`
 
 ```php
 for (initialize; condition; increment) {
-    // code to execute while condition es true
+    // código a ejecutar mientras la condición es true
 }
 ```
 
-Example :
+Un ejemplo :
 
 ```php
 for ($x = 0; $x < 10; $x++) {
@@ -581,15 +582,15 @@ for ($x = 0; $x < 10; $x++) {
 // 0123456789
 ```
 
-### While
+### `while`
 
 ```php
 while (condition) {
-    // code to be executed
+    // código a ejecutar
 }
 ```
 
-Example :
+Un ejemplo :
 
 ```php
 $x = 0;
@@ -601,15 +602,15 @@ while ($X < 10) {
 // 0123456789
 ```
 
-### Do while
+### `do...while`
 
 ```php
 do {
-  // code to be executed
+  // código a ejecutar
 } while (condition);
 ```
 
-Example :
+Un ejemplo :
 
 ```php
 $x = 1;
@@ -621,7 +622,7 @@ do {
 // 0123456789
 ```
 
-**Be carefull**: `do...while` always execute first and checks second:
+**Ten cuidado**: `do...while` siempre se ejecuta primero y hace la comprobación después:
 
 ```php
 $x = 50;
@@ -633,39 +634,39 @@ do {
 // 50
 ```
 
-### For each
+### `foreach`
 
-Is usually used for arrays
+Este bucle se suele usar para arrays
 
 ```php
 foreach ($array as $value) {
-  // code to be executed
+  // código a ejecutar
 }
 ```
 
-Example :
+Un ejemplo :
 
 ```php
-$posts = ['first','second','third','fourth'];
+$posts = ['primero','segundo','tercero','cuarto'];
 
 foreach ($posts as $post) {
   echo $post . ' ';
 }
-// first second third fourth
+// primero segundo tercero cuarto
 ```
 
-Also, with `foreach` we can obtain the index of the values from the array :
+Además, con el `foreach` podemos obtener el índice de los valores del array:
 
 ```php
-$posts = ['first','second','third','fourth'];
+$posts = ['primero','segundo','tercero','cuarto'];
 
-foreach ($posts as $index => $post) {
-  echo $index . '-' . $post . ' ';
+foreach ($posts as $indice => $post) {
+  echo $indice . '-' . $post . ' ';
 }
 // 0-first 1-second 2-third 3-fourth
 ```
 
-As we sais before, there are different types of arrays so... let's try this `foreach` loop with an [associative array](#associative-array)
+Como hemos dicho, hay distintos tipos de arrays así que vamos a probar el bucle `foreach`con un [array asociativo](#array-asociativo)
 
 ```php
 $hex = [
@@ -687,317 +688,317 @@ blanco is #fff
 */
 ```
 
-## Functions
+## Funciones
 
-Functions are basicaly, blocks of code you can name and run anywhere.
+Las funciones son bloques de código que puedes nombrar y ejecutar donde sea.
 
-For creating a function you use the `function` keyword and after that the name of teh function.
+Para crear funciones se usa la palabra reservada `function` seguida del nombre de la función.
 
 ```php
-function name () {
-  // block of code that will be executed
+function nombre () {
+  // bloque de código que se ejecute
 }
 ```
 
-Example :
+Un ejemplo :
 
 ```php
-function say_hi () {
-  echo 'Hello!';
+function saludar () {
+  echo 'Hola!';
 }
 ```
 
-What we have done there is just declare the function, right now it will not execute the code inside. For that, we need to call it:
+Lo que hemos hecho ahí es declarar la función y ahora mismo no ejecutará el código que lleva dentro. Para que se ejecute, tenemos que llamarla:
 
 ```php
-function say_hi () {
-  echo 'Hello!';
+function saludar () {
+  echo 'Hola!';
 }
 
-say_hi(); // Hello!
+saludar(); // Hola!
 ```
 
 ### Scope
 
-As in other languages, php function have their own scope.
+Como en otros lenguajes, las funciones en php tienen su propio scope o alcance.
 
-What that it means? This means that if we declare any variable only inside the function, outside it it will not exist.
+¿Qué significa exactamente esto? Esto quiere decir que si declaramos cualquier variable solamente dentro de la función, fuera de ella no existirá.
 
-Example :
+Un ejemplo :
 
 ```php
-function say_hi () {
-  $hi = 'Hello!';
-  echo $hi;
+function saludar () {
+  $hola = 'Hola!';
+  echo $hola;
 }
 
-say_hi(); // Hello!
+saludar(); // Hola!
 ```
 
-As we declarojo the variable `$hi` inside the function `say_hi`, it will have access to it's value, but, if we try to call this variable outside the function, we will get an error!:
+Como hemos declarado la función `$hola` dentro de la función `saludar`, tendrá acceso a su valor, pero, si intentamos acceder a esta misma variable desde fuera de la función, nos dará un error:
 
 ```php
-function say_hi () {
-  $hi = 'Hello!';
-  echo $hi;
+function saludar () {
+  $hola = 'Hola!';
+  echo $hola;
 }
 
-say_hi(); // Hello!
+saludar(); // Hola!
 
-echo $hi; // Warning: Undefined variable $hi
+echo $hola; // Warning: Undefined variable $hola
 ```
 
-We get this error because `$hi` is in the function scope and we tryed to access his value as it was a variable in the global scope.
+Nos da ese error porque `$hola` solo está en el scope de la función y estamos intentando acceder a su valor como si fuera una variable en el scope global.
 
-The same will happen if we try to read a global variable inside a function :
+Lo mismo ocurre si intentamos leer una variable global dentro de una función:
 
 ```php
-  $hi = 'Hello!';
-function say_hi () {
-  echo $hi;
+  $hola = 'Hola!';
+function saludar () {
+  echo $hola;
 }
 
-say_hi(); // Warning: Undefined variable $hi
+saludar(); // Warning: Undefined variable $hola
 
-echo $hi; // Hello!
+echo $hola; // Hola!
 ```
 
-But, how we can read a global variable inside the function? For this we can use `global` :
+Pero, ¿cómo podemos leer una variable global dentro de una función? Para esto se usa `global` :
 
 ```php
-  $hi = 'Hello!';
-function say_hi () {
-  global $hi;
-  echo $hi;
+  $hola = 'Hola!';
+function saludar () {
+  global $hola;
+  echo $hola;
 }
 
-say_hi(); // Warning: Undefined variable $hi
+saludar(); // Hola!
 
-echo $hi; // Hello!
+echo $hola; // Hola!
 ```
 
-### Arguments
+### Argumentos
 
-Arguments defines what's going into the function and parameters are passed to the function inside the `()` when calling it.
+Los argumentos definen que va dentro de la función y los parámetros son pasados a la función dentro de `()` cuándo es llamada.
 
 ```php
-function name ($argument) {
-  // code to execute when called
+function name ($argumento) {
+  // código a ejecutar
 }
 
-name (parameter);
+name(parameter);
 ```
 
-Example :
+Un ejemplo :
 
 ```php
-function say_hi ($time_day) {
-  echo "Hello!, good $time_day";
+function saludar ($hora_del_dia) {
+  echo "Hola!, son las $hora_del_dia";
 }
 
-say_hi ("afternoon"); //Hello!, good afternoon
+saludar("12"); //Hola!, son las 12
 ```
 
-#### Default Values
+#### Valores por defecto
 
-If we declare a function with arguments, but we don't pass any parameter when called, a error will be thrown. For avoiding that, we have the default values :
+Si declaramos una función con argumentos, pero no le pasamos ningún parámetro cuando la llamamos, nos dará un error. Para evitar esto, tenemos los valores por defecto:
 
 ```php
-function say_hi ($time_day = 'morning') {
-  echo "Hello!, good $time_day";
+function saludar ($hora_del_dia = '3') {
+  echo "Hola!, son las $hora_del_dia";
 }
 
-say_hi (); //Hello!, good morning
+saludar(); //Hola!, son las 3
 ```
 
-### Output
+### Salida
 
-In the above examples, we are always making some 'echo' inside the function, but there is other way to get the value and it's by returnin it with the `return`:
+En los ejemplos anteriores, siempre estamos haciendo algún `echo` dentro de la función, pero hay una forma distinta de tener el valor y es devolver el valor con un `return`:
 
 ```php
-function name () {
-  return // code to be returned
+function nombre() {
+  return // código a devolver
 }
 
-name();
+nombre();
 ```
 
-But if we try this, nothing is displayed in the browser.
+Pero si probamos esto, nada se muestra en el navegador.
 
-That is because we need and explicit `echo` to display the value of the return:
+Esto se debe a que necesitamos un `echo` explícito para mostrar el valor devuelto:
 
-Example:
+Un ejemplo:
 
 ```php
-function sum ($n1,$n2) {
+function suma ($n1,$n2) {
   return $n1 + $n2;
 }
 
-echo sum(1,5); // 6
+echo suma(1,5); // 6
 ```
 
-Also, we can assign the returned value of the function to a variable :
+Además, podemos asignar el valor devuelto por una función a una variable:
 
 ```php
-function sum ($n1,$n2) {
+function suma ($n1,$n2) {
   return $n1 + $n2;
 }
 
-$result = sum(1,5);
+$result = suma(1,5);
 
 echo $result; // 6
 ```
 
-### Anonymous Functions
+### Funciones anónimas
 
-We can also have functions without a name, this are called anonymous functions, and the look like this:
+También podemos tener funciones sin un nombre, estas son llamadas funciones anónimas, y son así:
 
 ```php
 $variable = function() {
-  return // code to be returned
+  return // código a devolver
 };
 ```
 
-It works as a regular function, having arguments and all the function capabilities.
+Funcionan como una función normal, pudiendo tener argumentos y todas las capacidades de una función.
 
-Example:
+Un ejemplo:
 
 ```php
-$sum = function ($n1,$n2) {
+$suma = function ($n1,$n2) {
   return $n1 + $n2;
 };
-echo $sum(1,5); // 6
+echo $suma(1,5); // 6
 ```
 
-### Arrow functions
+### Funciones de flecha
 
-Functions have their own shorted syntax, and looks like this :
+Las funciones tiene su propia sintaxis corta, que es así:
 
 ```php
-$variable = fn($argument) => argument;
+$variable = fn($argumento) => argumento;
 ```
 
-When talking about a single line return, we can get rid of `{}` and the `return` itself, also we change the `function` keyword by the `fn`, much short and easy.
+Cuando hablamos de `return` de una sola línea, podemos desechar las llaves (`{}`) y el propio `return`. También podemos cambiar la palabra reservada `function` por `fn`, que es más corta y fácil.
 
-Example :
+Un ejemplo :
 
 ```php
-$sum = fn($n1,$n2) => $n1 + $n2;
+$suma = fn($n1,$n2) => $n1 + $n2;
 
-echo $sum(1,5); //
+echo $suma(1,5); // 6
 ```
 
-**Be carefull :** If the return isn't a single line one, you have to use the `{}` and also the `return` keyword
+**Cuidado :** Se el `return` no es de una sola línea, hay que usar las llaves (`{}`) y también la palabra reservada `return`.
 
-## Array functions
+## Funciones de array
 
-This type of functions are usefull for getting information on a specific array or manipulating and working with the data of it.
+Este tipo de funciones son útiles para obtener información sobre un array o para manipular y trabajar con sus valores.
 
-For the next examples we will use this arrays :
+Para los siguientes ejemplos usaremos los siguientes arrays :
 
 ```php
-$frutas = ['apple','orange','pear'];
+$frutas = ['manzana','naranja','pera'];
 ```
 
-### Get length
+### Conseguir longitud
 
-For getting the length of an array we will use the `count()` function :
+Para obtener la longitud de un array usaremos la función `count()`:
 
 ```php
 echo count($frutas); // 3
 ```
 
-### Search array
+### Buscar en un array
 
-Search inside the array for a especific value.
+Buscar por un valor específico dentro de un array.
 
-For that we use the `in_array()` function, that return true or false, true if any value met the requirements, and false if don't.
+Para ello, usamos la función `in_array()`, que devuelve `true` o `false`, `true` si cualquiera de los valores cumple la condición, y `false` si no.
 
 ```php
-echo in_array('orange',$frutas); // 1
+echo in_array('naranja',$frutas); // 1
 ```
 
-It returns 1 because an `echo` of `true`, displays 1, while an `echo` of `false` desn't display anything.
+Nos devuelve 1 porque el `echo` de un valor `true` muestra 1, mientras que si el valor fuera `false` no mostraría nada.
 
-### Add to array
+### Añadir a un array
 
-If we want to add certain value to an array, there are some ways to do it:
+Si queremos añadir cierto valor a un array, hay algunas formas de hacerlo:
 
-**Add to the end :**
+**Añadir al final:**
 
 - ```php
-  $frutas[] = 'grape';
+  $frutas[] = 'uva';
 
   print_r($frutas);
-  // Array ( [0] => apple [1] => orange [2] => pear [3] => grape )
+  // Array ( [0] => manzana [1] => naranja [2] => pera [3] => uva )
   ```
 
 - ```php
-    array_push($frutas,'grape','azulberry');
+    array_push($frutas,'uva','cereza');
 
     print_r($frutas);
-    // Array ( [0] => apple [1] => orange [2] => pear [3] => grape [4] => azulberry )
+    // Array ( [0] => manzana [1] => naranja [2] => pera [3] => uva [4] => cereza )
   ```
 
-  **Add to the beginning :**
+  **Añadir al inicio:**
 
 - ```php
-  array_unshift($frutas,'grape');
+  array_unshift($frutas,'uva');
 
   print_r($frutas);
-  // Array ( [0] => grape [1] => apple [2] => orange [3] => pear )
+  // Array ( [0] => uva [1] => manzana [2] => naranja [3] => pera )
   ```
 
-### Remove from array
+### Eliminar de un array
 
-**Remove from the end :**
+**Eliminar del final:**
 
 ```php
 array_pop($frutas);
 
 print_r($frutas);
-// Array ( [0] => apple [1] => orange )
+// Array ( [0] => manzana [1] => naranja )
 ```
 
-**Remove from the beginning :**
+**Eliminar del inicio:**
 
 ```php
 array_shift($frutas);
 
 print_r($frutas);
-// Array ( [0] => orange [1] => pear )
+// Array ( [0] => naranja [1] => pera )
 ```
 
-**Remove specific elemen :**
+**Eliminar un elemento específico:**
 
 ```php
 unset($frutas[1]);
 
 print_r($frutas);
-// Array ( [0] => apple [2] => pear )
+// Array ( [0] => manzana [2] => pera )
 ```
 
-### Split array
+### Dividir un array
 
-For this example, we will split the array in 2 chunks, but you can do it in as many chunks as you want and can.
+Para este ejemplo, dividiremos el array  en dos partes, pero se pude hacer en cuantas partes se quiera y pueda.
 
 ```php
-$chunked_array = array_chunk($frutas,2);
+$array_dividido = array_chunk($frutas,2);
 
-print_r($chunked_array);
-// Array ( [0] => Array ( [0] => apple [1] => orange ) [1] => Array ( [0] => pear ) )
+print_r($array_dividido);
+// Array ( [0] => Array ( [0] => manzana [1] => naranja ) [1] => Array ( [0] => pera ) )
 ```
 
-### Concatenate arrays
+### Concatenar arrays
 
-For this example we will use this new arrays:
+Para este ejemplo usaremos estos nuevos arrays:
 
 ```php
 $arr1 = [1,2,3];
 $arr2 = [4,5,6];
 ```
 
-For concatenating the arrays we can use the `array_merge()` function:
+para concatenar los arrays podemos usar la función `array_merge()`:
 
 ```php
 $arr3 = array_merge($arr1,$arr2);
@@ -1006,7 +1007,7 @@ print_r($arr3);
 // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 [5] => 6 )
 ```
 
-Also, we can use the spread operator as in JavaScript :
+También podemos usar el spread operator como en JavaScript :
 
 ```php
 $arr3 = [...$arr1, ...$arr2];
@@ -1015,30 +1016,30 @@ print_r($arr3);
 // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 [5] => 6 )
 ```
 
-### Combine arrays
+### Combinar arrays
 
-For this example we will use this new arrays:
+Para este ejemplo usaremos this example we will use this new arrays:
 
 ```php
 $a = ['rojo','verde','azul'];
-$b = ['avacado','apple','bannana'];
+$b = ['aguacate','manzana','plátano'];
 ```
 
-Fr combining those 2 arrays, we use the built in function called `array_combine()`:
+Para combinar estos dos arrays, usamos la función  `array_combine()`:
 
 ```php
 $c = array_combine($a,$b);
 
 print_r($c);
-// Array ( [rojo] => avacado [verde] => apple [azul] => bannana )
+// Array ( [rojo] => aguacate [verde] => manzana [azul] => plátano )
 ```
 
-_What had happen?_ The `$a` array has been taken as index and the `$b` array as values, so, the first value of the `$a` is the index of the first value of array `$b`
+_¿Qué ha pasado?_ El array `$a` es escogido como índice y el array `$b` representa los valores, así que, el primer valor de `$a` es el índice del primer valor del array `$b`
 
-Now, as we have a combined array (`$c`), we can have fun with it:
+Ahora, como tenemos un array combinado (`$c`), podemos divertirnos con el:
 
-**Create an array of the keys :**
-_This will return the `$a` array_
+**Crear un array de las keys:**
+_Esto devolverá el array `$a`_
 
 ```php
 $keys = array_keys($c);
@@ -1047,58 +1048,58 @@ print_r($keys);
 // Array ( [0] => rojo [1] => verde [2] => azul )
 ```
 
-**Flip the array**
+**Voltear el array**
 
 ```php
-$flipped = array_flip($c);
+$volteado = array_flip($c);
 
-print_r($flipped);
-// Array ( [avacado] => rojo [apple] => verde [bannana] => azul )
+print_r($volteado);
+// Array ( [aguacate] => rojo [manzana] => verde [plátano] => azul )
 ```
 
-### Array with range of numbers
+### Array con rango numérico
 
-Many times we will want to have an array with numbers from 0 to 9, or from one to another number and with the built in function called `range()`, that takes a couple of arguments like start and end :
+Muchas veces vamos a querer tener un array con números del 1 al 9, O de un número a otro y con la función `range()` eso es posible. Esta función tiene algunos argumentos como el inicio y el final del rango:
 
 ```php
-$numbers = range(1,9);
+$nums = range(1,9);
 
-print_r($numbers)
+print_r($nums)
 // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 [5] => 6 [6] => 7 [7] => 8 [8] => 9 )
 ```
 
-### Map an array
+### Mapear un array
 
 ```php
-$newNumbers = array_map(function($number){
-  return "Number {$number}";
-},$numbers);
+$newNums = array_map(function($num){
+  return "Number {$num}";
+},$nums);
 ```
 
-But as we learned previously, the return itself does not display anything, so we need to print it:
+Pero como ya hemos aprendido, el `return` por si solo no muestra nada, necesitamos visualizarlo de manera explícita:
 
 ```php
-print_r($newNumbers);
+print_r($newNums);
 // Array ( [0] => Number 1 [1] => Number 2 [2] => Number 3 [3] => Number 4 [4] => Number 5 [5] => Number 6 [6] => Number 7 [7] => Number 8 [8] => Number 9 )
 ```
 
-### Filter an array
+### Filtrar un array
 
 ```php
-$lessThan10 = array_filter($numbers,fn($number)=> $number < 10);
+$menosde10 = array_filter($nums,fn($num)=> $num < 10);
 
-print_r($lessThan10);
+print_r($menosde10);
 // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 [5] => 6 [6] => 7 [7] => 8 [8] => 9 )
 ```
 
-### rojouce an array
+### Reducir un array
 
-What if we want to sum, multiply, divide or whatever with all the array values? For that case, we hav a built in array function called `array_rojouce()`.
+¿Y si queremos sumar, multiplicar, dividir o lo que sea con todos los valores de un array? Para ello, tenemos la función `array_reduce()`.
 
-This function takes 2 arguments, first to array we want to rojouce, and second a function that takes other 2 arguments, first one is the `$carry` that holds the return value of the previous iteration, and the second one is the name of the values.
+Este función tiene 2 argumentos, rl primerio es el array que queremos reducir, y el segundo una función que coge otros dos argumentos , el primero es el `$carry` que lleva el valor de la iteración previa, y el segundo es el nombre de los valores.
 
 ```php
-$rojouce = array_rojouce(
+$reducir = array_reduce(
     $array,
     function ($carry, $arr) {
         return $carry + $arr;
@@ -1106,102 +1107,102 @@ $rojouce = array_rojouce(
 );
 ```
 
-Example :
+Un ejemplo :
 
 ```php
-$sum_numbers = array_rojouce($numbers, fn($carry, $number)=> $carry + $number);
+$sum_nums = array_reduce($nums, fn($carry, $num)=> $carry + $num);
 
-echo $sum_numbers
+echo $sum_nums
 // 45
 ```
 
-## String functions
+## Funciones para Strings
 
-For this string functions, we will work with the `Hello World` string.
-
-```php
-$string = 'Hello World';
-```
-
-### Length of a string
+Para estas funciones de cadena, trabajaremos con la cadena `Hola Mundo` string.
 
 ```php
-echo strlen($string); // 11
+$cadena = 'Hola Mundo';
 ```
 
-### Find the index of a substring
-
-- First ocurrence
-  :
-  ```php
-  echo strpos('o'); // 4
-  ```
-- Last ocurrence
-  :
-  ```php
-  echo strrpos('o'); // 7
-  ```
-
-### Reverse a string
+### Longitud de una cadena
 
 ```php
-echo strrev($string); // dlroW olleH
+echo strlen($cadena); // 10
 ```
 
-### Convert characters of a string
+### Índice de una subcadena
 
-- All to lower case
+- Primera ocurrencia
   :
   ```php
-  echo strtolower($string); // hello world
+  echo strpos('a'); // 3
   ```
-- All to upper case
+- Última ocurrencia
   :
   ```php
-  echo strtoupper($string); // HELLO WORLD
-  ```
-- First to upper case
-  :
-  ```php
-  echo ucwords($string); // Hello World
+  echo strrpos('o'); // 9
   ```
 
-### Replace a substring
+### Voltear una cadena
 
 ```php
-echo str_replace('World','Everyone',$string); // Hello Everyone
+echo strrev($cadena); // odnuM aloH
 ```
 
-### Portion of a string
+### Convertir caracteres de una cadena
 
-```php
-echo substr($string, 0, 5); // Hello
-
-echo substr($string, 5); // World
-```
-
-### Start or ends with
-
-- Starts with
+- Todos a minúsculas
   :
   ```php
-  var_dump(str_starts_with($string,'Hello'));
+  echo strtolower($cadena); // hola mundo
+  ```
+- Todos a mayúsculas
+  :
+  ```php
+  echo strtoupper($cadena); // HOLA MUNDO
+  ```
+- La primera mayúscula
+  :
+  ```php
+  echo ucwords($cadena); // Hola mundo
+  ```
+
+### Reemplazar una subcadena
+
+```php
+echo str_replace('Mundo','A Todos',$cadena); // Hola A Todos
+```
+
+### Porción de una cadena
+
+```php
+echo substr($cadena, 0, 3); // Hola
+
+echo substr($cadena, 4); // Mundo
+```
+
+### Empieza o acaba con
+
+- Empieza con
+  :
+  ```php
+  var_dump(str_starts_with($cadena,'Hola'));
   // bool(true)
   ```
-- Ends with
+- Acaba con
   :
   ```php
-  var_dump(str_ends_with($string,'ld'));
+  var_dump(str_ends_with($cadena,'do'));
   // bool(true)
   ```
 
-### Print formated string
+### Visualizar cadena formateada
 
 If e have some string that will have a part that will be fixed and other tha will change depending on the data, we can use the `printf()` built in function, that we could use with substrinsg :
 
 ```php
-printf('%s likes to %s','Jhon','code');
-// Jhon likes to code
+printf('%s likes to %s','Juan','code');
+// Juan likes to code
 ```
 
 The `%s` is the substitution of the string. Now, an example with numbers :
@@ -1228,9 +1229,9 @@ The `script` will be executed as if it was the common `script` tag.
 At first look it may be not seems like a big problem, but if we have some input as i said before, and we echo the value given by the user in that input, if he puts his name, the result will be something like this :
 
 ```php
-$input_value = 'Jhon';
+$input_value = 'Juan';
 
-echo $input_value;// Jhon
+echo $input_value;// Juan
 ```
 
 But, if he puts an `script` in the input field, it will be interpreted as common html.
@@ -1492,7 +1493,7 @@ if (isset($_POST['submit'])) {
 
 Other way to sanitize our inputs is using `filter_var()`, that works similar as `filter_input()`, but this can be used with mora things than inputs.
 
-Example :
+Un ejemplo :
 
 ```php
 <?php
@@ -1520,7 +1521,7 @@ For setting the cookie, we will need 3 parameters:
 - Expiration time
   : When we want that the cookie expire.
 
-Example :
+Un ejemplo :
 
 ```php
 setcookie('name','Brad',time()+86400);
@@ -1592,7 +1593,7 @@ First, we need to create a file, that we will call `users.txt`, that will have t
 
 ```txt
 Brad
-Jhon
+Juan
 Sara
 Steve
 Harry
@@ -1614,7 +1615,7 @@ file_exists($filep);
 
 ```php
 echo readfile($filep);
-// Brad Jhon Sara Steve Harry26
+// Brad Juan Sara Steve Harry26
 ```
 
 Other way to read a file is with `fread()`, that need 2 arguments : stream and length :
@@ -1625,7 +1626,7 @@ $handle = fopen($filep,'r');
 $contents = fread($handle,filesize($filep));
 fclose($handle);
 echo $contents;
-// Brad Jhon Sara Steve Harry
+// Brad Juan Sara Steve Harry
 ```
 
 ### Writing file
@@ -1633,7 +1634,7 @@ echo $contents;
 ```php
 $handle = fopen($filep,'w');
 // r means open for writing only
-$contents = 'Brad Jhon Mike';
+$contents = 'Brad Juan Mike';
 fwrite($handle,$contents);
 fclose($handle);
 ```
@@ -1643,7 +1644,7 @@ If we want it with line breacks, we will use `PHP_EOL`:
 ```php
 $handle = fopen($filep,'w');
 // r means open for writing only
-$contents = 'Brad'.PHP_EOL.'Jhon'.PHP_EOL.'Mike';
+$contents = 'Brad'.PHP_EOL.'Juan'.PHP_EOL.'Mike';
 fwrite($handle,$contents);
 fclose($handle);
 ```
@@ -1751,11 +1752,11 @@ Everything is `NULL` as we didn't specify that values, so let's into it :
 
 ```php
 $user1 = new User();
-$user1->name = 'Jhon';
-$user1->email = 'jhondoe@gmail.com';
+$user1->name = 'Juan';
+$user1->email = 'fedevalverde@gmail.com';
 $user1->password = '1234';
 print_r($user1);
-// User Object ( [name] => Jhon [email] => jhondoe@gmail.com [password] => 1234 )
+// User Object ( [name] => Juan [email] => fedevalverde@gmail.com [password] => 1234 )
 ```
 
 ### Access modifiers
@@ -1816,13 +1817,13 @@ Now, thanks to the constructor, when we instantiate a user we can pass it the va
 
 ```php
 $user1 = new User('Brad','brad@gmail.com','securePassword');
-$user2 = new User('Jhon','jhondoe@gmail.com','1234');
+$user2 = new User('Juan','fedevalverde@gmail.com','1234');
 
 print_r($user1);
 // User Object ( [name] => Brad [email] => brad@gmail.com [password] => securePassword )
 echo '<br/>';
 print_r($user2);
-// User Object ( [name] => Jhon [email] => jhondoe@gmail.com [password] => 1234 )
+// User Object ( [name] => Juan [email] => fedevalverde@gmail.com [password] => 1234 )
 ```
 
 ### Inheritence
