@@ -44,7 +44,7 @@ When entering a page, the browser send a request to the server, then PHP code is
 
 ### Comments
 
-- single line comments: `//inline coment`
+- single line comments: `//inline comment`
 
 - multiple lines comments:
   ```php
@@ -60,7 +60,7 @@ When entering a page, the browser send a request to the server, then PHP code is
 
 ### `echo`
 
-You can output strings, numbres, html, etc...
+You can output strings, numbers, html, etc...
 
 ```php
 echo 123, 'Hello', 10.5; //123Hello10.5
@@ -110,7 +110,7 @@ var_export([1,2,3]);
 ### Types
 
 - String
-  : Series of chracters surrounded by quotes or doble quotes
+  : Series of characters surrounded by quotes or doble quotes
 - Integer
   : Whole number
 - Float
@@ -118,7 +118,7 @@ var_export([1,2,3]);
 - Boolean
   : True or False
 - Array
-  : Special variable, wich can hold mor than one value
+  : Special variable, which can hold mor than one value
 - Object
   : A class
 - NULL
@@ -220,7 +220,7 @@ var_export($numbers)
 // array ( 0 => 15, 1 => 22, 2 => 36, 3 => 41, )
 ```
 
-If we want to have access to a concrete value, we can do it by their index, but, be carefull, because **arrays index start at 0**, so the first stored value is in the 0 position:
+If we want to have access to a concrete value, we can do it by their index, but, be careful, because **arrays index start at 0**, so the first stored value is in the 0 position:
 
 ```php
 echo $fruits[0] // apple
@@ -231,7 +231,7 @@ echo $fruits[1] // orange
 
 The associative array is a way to create a array and customize the index.
 
-_The keys (indexs) can be numbers or string_
+_The keys (index) can be numbers or string_
 
 1. **With Numbers:**
 
@@ -286,7 +286,7 @@ _The keys (indexs) can be numbers or string_
 
 ### Multidimensional Array
 
-This type of arrays are the ones who include an array inside itselfs (array inside other array).
+This type of arrays are the ones who include an array inside itself (array inside other array).
 
 ```php
 $people = [
@@ -308,13 +308,13 @@ $people = [
 ];
 ```
 
-And for returning some especific value we use the index as before:
+And for returning some specific value we use the index as before:
 
 ```php
 echo $people[1]['email']; // elenadoe@gmail.com
 ```
 
-As this type of array is similar to json, we can return it in json format by simply usig json_encode function :
+As this type of array is similar to json, we can return it in json format by simply using json_encode function :
 
 ```php
 print_r(json_encode($people));
@@ -383,7 +383,7 @@ As age is equal or greater than 18 (19) it will return the inside of the if as t
 
 #### Else
 
-But, what if we want to return oher value if the conditions are not true? This can be easily managed with `else` statement:
+But, what if we want to return other value if the conditions are not true? This can be easily managed with `else` statement:
 
 ```php
 if (condition) {
@@ -484,7 +484,7 @@ echo !empty($active_users) ? 'There are active users' : 'No active users';
 // There are active users
 ```
 
-Also, we can use these ternary operator for conditional assignement.
+Also, we can use these ternary operator for conditional assignment.
 
 Example:
 
@@ -497,7 +497,7 @@ echo $first_active_user;
 // Philip
 ```
 
-But what if we actually don't want that our conditinal variable have value if the condition is not met?. What if we really don't want the `else` statement?
+But what if we actually don't want that our conditional variable have value if the condition is not met?. What if we really don't want the `else` statement?
 
 For this problem we have two solutions:
 
@@ -519,7 +519,7 @@ Both are the same but, the last one is shorter!
 
 ### Switch
 
-This conditional is very usefull if we have many conditions. This helps us to have more clean code instead of so many `elseif`.
+This conditional is very useful if we have many conditions. This helps us to have more clean code instead of so many `elseif`.
 
 ```php
 switch (variable) {
@@ -560,9 +560,9 @@ But let explain what happened here. Each case work as an `elseif` condition, but
 
 ## Loops
 
-Loops are basically used to execute a piece of code while a specific condition is met and will keep executing that code until is no longuer met.
+Loops are basically used to execute a piece of code while a specific condition is met and will keep executing that code until is no longer met.
 
-There diferent types of loops:
+There different types of loops:
 
 ### For
 
@@ -621,7 +621,7 @@ do {
 // 0123456789
 ```
 
-**Be carefull**: `do...while` always execute first and checks second:
+**Be careful**: `do...while` always execute first and checks second:
 
 ```php
 $x = 50;
@@ -665,7 +665,7 @@ foreach ($posts as $index => $post) {
 // 0-first 1-second 2-third 3-fourth
 ```
 
-As we sais before, there are different types of arrays so... let's try this `foreach` loop with an [associative array](#associative-array)
+As we said before, there are different types of arrays so... let's try this `foreach` loop with an [associative array](#associative-array)
 
 ```php
 $hex = [
@@ -689,7 +689,7 @@ white is #fff
 
 ## Functions
 
-Functions are basicaly, blocks of code you can name and run anywhere.
+Functions are basically, blocks of code you can name and run anywhere.
 
 For creating a function you use the `function` keyword and after that the name of teh function.
 
@@ -747,7 +747,7 @@ say_hi(); // Hello!
 echo $hi; // Warning: Undefined variable $hi
 ```
 
-We get this error because `$hi` is in the function scope and we tryed to access his value as it was a variable in the global scope.
+We get this error because `$hi` is in the function scope and we tried to access his value as it was a variable in the global scope.
 
 The same will happen if we try to read a global variable inside a function :
 
@@ -812,7 +812,7 @@ say_hi (); //Hello!, good morning
 
 ### Output
 
-In the above examples, we are always making some 'echo' inside the function, but there is other way to get the value and it's by returnin it with the `return`:
+In the above examples, we are always making some 'echo' inside the function, but there is other way to get the value and it's by returning it with the `return`:
 
 ```php
 function name () {
@@ -887,11 +887,11 @@ $sum = fn($n1,$n2) => $n1 + $n2;
 echo $sum(1,5); //
 ```
 
-**Be carefull :** If the return isn't a single line one, you have to use the `{}` and also the `return` keyword
+**Be careful :** If the return isn't a single line one, you have to use the `{}` and also the `return` keyword
 
 ## Array functions
 
-This type of functions are usefull for getting information on a specific array or manipulating and working with the data of it.
+This type of functions are useful for getting information on a specific array or manipulating and working with the data of it.
 
 For the next examples we will use this arrays :
 
@@ -909,7 +909,7 @@ echo count($fruits); // 3
 
 ### Search array
 
-Search inside the array for a especific value.
+Search inside the array for a specific value.
 
 For that we use the `in_array()` function, that return true or false, true if any value met the requirements, and false if don't.
 
@@ -917,7 +917,7 @@ For that we use the `in_array()` function, that return true or false, true if an
 echo in_array('orange',$fruits); // 1
 ```
 
-It returns 1 because an `echo` of `true`, displays 1, while an `echo` of `false` desn't display anything.
+It returns 1 because an `echo` of `true`, displays 1, while an `echo` of `false` doesn't display anything.
 
 ### Add to array
 
@@ -968,7 +968,7 @@ print_r($fruits);
 // Array ( [0] => orange [1] => pear )
 ```
 
-**Remove specific elemen :**
+**Remove specific element :**
 
 ```php
 unset($fruits[1]);
@@ -1021,7 +1021,7 @@ For this example we will use this new arrays:
 
 ```php
 $a = ['red','green','blue'];
-$b = ['avacado','apple','bannana'];
+$b = ['avocado','apple','banana'];
 ```
 
 Fr combining those 2 arrays, we use the built in function called `array_combine()`:
@@ -1030,7 +1030,7 @@ Fr combining those 2 arrays, we use the built in function called `array_combine(
 $c = array_combine($a,$b);
 
 print_r($c);
-// Array ( [red] => avacado [green] => apple [blue] => bannana )
+// Array ( [red] => avocado [green] => apple [blue] => banana )
 ```
 
 _What had happen?_ The `$a` array has been taken as index and the `$b` array as values, so, the first value of the `$a` is the index of the first value of array `$b`
@@ -1053,7 +1053,7 @@ print_r($keys);
 $flipped = array_flip($c);
 
 print_r($flipped);
-// Array ( [avacado] => red [apple] => green [bannana] => blue )
+// Array ( [avocado] => red [apple] => green [banana] => blue )
 ```
 
 ### Array with range of numbers
@@ -1131,12 +1131,12 @@ echo strlen($string); // 11
 
 ### Find the index of a substring
 
-- First ocurrence
+- First occurrence
   :
   ```php
   echo strpos('o'); // 4
   ```
-- Last ocurrence
+- Last occurrence
   :
   ```php
   echo strrpos('o'); // 7
@@ -1195,9 +1195,9 @@ echo substr($string, 5); // World
   // bool(true)
   ```
 
-### Print formated string
+### Print formatted string
 
-If e have some string that will have a part that will be fixed and other tha will change depending on the data, we can use the `printf()` built in function, that we could use with substrinsg :
+If e have some string that will have a part that will be fixed and other tha will change depending on the data, we can use the `printf()` built in function, that we could use with substring :
 
 ```php
 printf('%s likes to %s','Jhon','code');
@@ -1290,7 +1290,7 @@ We can pass data through urls (`$_GET`) and forms (`$_GET`, `$_POST`) using this
 
 `$_GET` can read data from an form and from an url.
 
-If we have some argument that we want to pass trough pages, we can add it to the anchor `href` atribute like this:
+If we have some argument that we want to pass trough pages, we can add it to the anchor `href` attribute like this:
 
 ```php
 <a href="/profile.php?name=Brad">Click me</a>
@@ -1300,7 +1300,7 @@ In that piece of code, we are saying that we want to go the this url:
 
 `/profile.php?name=Brad`
 
-If we take a look, we have a `name` atribute that is equal to `Brad`, that's the atribute we will read in the `$_GET`.
+If we take a look, we have a `name` attribute that is equal to `Brad`, that's the attribute we will read in the `$_GET`.
 And as it is a valid url, we will go there.
 
 Now, in the **profile.php** file, we have the `$_GET` ready, listening to the name :
@@ -1312,7 +1312,7 @@ Now, in the **profile.php** file, we have the `$_GET` ready, listening to the na
 ?>
 ```
 
-The `$_GET` reads the `name` atribute from the url.
+The `$_GET` reads the `name` attribute from the url.
 
 If we want to add more data, we can use the `&` :
 
@@ -1346,7 +1346,7 @@ First, we need to built our form:
 </form>
 ```
 
-This is a regular form, but as we are working with PHP, we need to add some atributes to it :
+This is a regular form, but as we are working with PHP, we need to add some attributes to it :
 
 ```php
 <form action="/profile.php" method="GET">
@@ -1363,11 +1363,11 @@ This is a regular form, but as we are working with PHP, we need to add some atri
 We have added several things :
 
 - name
-  : to let `$_POST` and `$_GET` read the value when submiting.
+  : to let `$_POST` and `$_GET` read the value when submitting.
 - method
-  : to specify if we want it as POST or GET when submiting (default is GET).
+  : to specify if we want it as POST or GET when submitting (default is GET).
 - action
-  : this will send the data to the specified php file in this atribute ('/' send to the same file).
+  : this will send the data to the specified php file in this attribute ('/' send to the same file).
 
 Now, if we click in the submit button, we will be redirected to the `profile.php` file, and we will pass to it the data :
 
@@ -1381,9 +1381,9 @@ Now, if we click in the submit button, we will be redirected to the `profile.php
 // 30
 ```
 
-The age and name stands for the `name` atribute in each input.
+The age and name stands for the `name` attribute in each input.
 
-But, if look at the url of this progilr.php, we will see something like this :
+But, if look at the url of this profile.php, we will see something like this :
 
 ```
 /profile.php?name=Brad&age=30&submit=Submit
@@ -1395,7 +1395,7 @@ This does not look very clean, that is why we will use the POST method and the `
 
 `$_POST` is only used with forms as it hasn't access to the url parameters.
 
-For using it, we only change the `method` atribute in the main php file :
+For using it, we only change the `method` attribute in the main php file :
 
 ```php
 <form action="profile.php" method="POST">
@@ -1431,9 +1431,9 @@ If we tr this GET and POST methods to our own file, or we try to access directly
 Warning: Undefined array key "name" in /var/www/html/profile.php on line 14
 ```
 
-This is thrown because at the time to make that request to the server, any `name` parameter or ulr-atribute is set, so it's undefined.
+This is thrown because at the time to make that request to the server, any `name` parameter or ulr-attribute is set, so it's undefined.
 
-But, how can we avoid this, as at the first time that page loads, it will be none atribute set.
+But, how can we avoid this, as at the first time that page loads, it will be none attribute set.
 
 The way to solve this problem is with the `isset()` built in function :
 
@@ -1451,9 +1451,9 @@ if(isset($_POST['submit'])){
 
 We have talked early about some [security risks](#handle-html-strings) that inputs can have, so let's upgrade that knowledge adding a new wat to sanitize your inputs and make them more safe.
 
-Apart from the `htmlspecilchars` or `htmlentities` we can use other built in function called `filter_input()`.
+Apart from the `htmlspecialchars` or `htmlentities` we can use other built in function called `filter_input()`.
 
-This function needs 3 atributes:
+This function needs 3 attributes:
 
 1. The type, that can be any of this :
 
@@ -1524,7 +1524,7 @@ Example :
 
 ```php
 setcookie('name','Brad',time()+86400);
-// we set the cooki for one day
+// we set the cookie for one day
 ```
 
 ### Read cookie
@@ -1661,7 +1661,7 @@ For uploading a file, first we need a form so let's make it :
 </form>
 ```
 
-Something really important when uploading files is that the `enctype` atribute must be set, if it in's, it will not work.
+Something really important when uploading files is that the `enctype` attribute must be set, if it in's, it will not work.
 
 For the file uploading, we will use one of the [superglobals](#superglobals), the `$_FILES` one.
 
@@ -1736,7 +1736,7 @@ class User {
 }
 ```
 
-Those are properties, that are atributes that belong to a class.
+Those are properties, that are attributes that belong to a class.
 
 Now, we can instantiate a user object :
 
@@ -1784,7 +1784,7 @@ class User {
 }
 ```
 
-Now, we can acced that function outside the class :
+Now, we can access that function outside the class :
 
 ```php
 $user2 = new User();
@@ -1825,7 +1825,7 @@ print_r($user2);
 // User Object ( [name] => Jhon [email] => jhondoe@gmail.com [password] => 1234 )
 ```
 
-### Inheritence
+### Inheritance
 
 When a class belong to other class
 
