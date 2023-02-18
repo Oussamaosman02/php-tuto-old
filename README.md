@@ -1197,7 +1197,7 @@ echo substr($string, 5); // World
 
 ### Print formatted string
 
-If e have some string that will have a part that will be fixed and other tha will change depending on the data, we can use the `printf()` built in function, that we could use with substring :
+If we have some string that will have a part that will be fixed and other tha will change depending on the data, we can use the `printf()` built in function, that we could use with substring :
 
 ```php
 printf('%s likes to %s','Jhon','code');
@@ -1389,7 +1389,7 @@ But, if look at the url of this profile.php, we will see something like this :
 /profile.php?name=Brad&age=30&submit=Submit
 ```
 
-This does not look very clean, that is why we will use the POST method and the `$_POST` to get that data with a much cleaner and friendly url.
+This does not look very clean, that is why we will use the POST method and the `$_POST` to get that data with a much cleaner and url-friendly.
 
 ### POST
 
@@ -1425,7 +1425,7 @@ Now, we have the same result as before, but with a cleaner url.
 
 ### Undefined array key problem
 
-If we tr this GET and POST methods to our own file, or we try to access directly (from the url) to the **profile.php** file, we will see this error :
+If we try this GET and POST methods to our own file, or we try to access directly (from the url) to the **profile.php** file, we will see this error :
 
 ```
 Warning: Undefined array key "name" in /var/www/html/profile.php on line 14
@@ -1490,7 +1490,7 @@ if (isset($_POST['submit'])) {
 ?>
 ```
 
-Other way to sanitize our inputs is using `filter_var()`, that works similar as `filter_input()`, but this can be used with mora things than inputs.
+Other way to sanitize our inputs is using `filter_var()`, that works similar as `filter_input()`, but this can be used with more things than inputs.
 
 Example :
 
@@ -1507,7 +1507,7 @@ if (isset($_POST['submit'])) {
 
 ## Cookies
 
-Cookies ara a mechanism for storing data in the remote browser and thus tracking or identifying return users. You can set specific data to be stored in the browser, and then retrieve it when the user visits the site again.
+Cookies are a mechanism for storing data in the remote browser and this tracking or identifying return users. You can set specific data to be stored in the browser, and then retrieve it when the user visits the site again.
 
 ### Set cookie
 
@@ -1515,7 +1515,7 @@ For setting the cookie, we will need 3 parameters:
 
 - Key
   : For referencing that cookie in the future.
-- value
+- Value
   : The value of that cookie.
 - Expiration time
   : When we want that the cookie expire.
@@ -1632,7 +1632,7 @@ echo $contents;
 
 ```php
 $handle = fopen($filep,'w');
-// r means open for writing only
+// w means open for writing only
 $contents = 'Brad Jhon Mike';
 fwrite($handle,$contents);
 fclose($handle);
@@ -1677,7 +1677,7 @@ move_uploaded_file($file_tmp,$target_dir);
 
 ## Exceptions
 
-PHP has an exception model similar to that of other programming languages. An exception can be thrown, and caught ("cached") within PHP. Code may be surrounded in a try block, to facilitate the catching of potential exceptions. Each tru must have at least one corresponding catch or finally block.
+PHP has an exception model similar to that of other programming languages. An exception can be thrown, and caught ("cached") within PHP. Code may be surrounded in a try block, to facilitate the catching of potential exceptions. Each try must have at least one corresponding catch or finally block.
 
 For example, we want to throw an error if we try to divide by 0:
 
@@ -1724,7 +1724,7 @@ try {
 
 ## OOP
 
-From PHP5 onwards you can write PHP in either procedural or object orientated way. OOP consists of classes that can hold "properties" and "methods", Objects can be created from classes.
+From PHP5 onwards you can write PHP in either procedural or object orientated way. OOP consists of classes that can hold "properties" and "methods". Objects can be created from classes.
 
 Lets create a user using OOP!
 
